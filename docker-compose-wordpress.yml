@@ -1,0 +1,12 @@
+wp:
+   image: wordpress
+   container_name: mywpsite
+   domainname: mywpsite.test
+   volumes:
+      - ./app:/var/www/html
+   ports:
+      - "8082:80"
+   external_links:
+      - bbdd:mysql
+   environment:
+      WORDPRESS_DB_NAME: mywpdb

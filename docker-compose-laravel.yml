@@ -1,0 +1,15 @@
+web:
+   build: ./webserver
+   container_name: mylaravelsite
+   ports:
+      - 8080:80
+   volumes:
+      - ./app:/var/www/html
+   external_links:
+      - bbdd
+   environment:
+      DB_HOST: bbdd
+      DB_DATABASE: mylaraveldb
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      DB_CONNECTION: mysql
