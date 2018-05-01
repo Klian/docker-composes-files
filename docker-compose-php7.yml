@@ -1,0 +1,10 @@
+webapp:
+   image: webdevops/php-apache:7.0
+   container_name: miphp7
+   domainname: miphp7.test
+   volumes:
+      - ./app:/app
+   ports:
+      - "80:80"
+   external_links:
+      - bbdd:mysql
